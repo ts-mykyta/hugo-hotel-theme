@@ -6,4 +6,37 @@
     "context" .
     ) }}
   {{ end }}
+
+
+  {{ if not (eq .Site.Params.sections.mission false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "mission"
+    "name" (.Site.Params.layouts.mission | default "mission-1")
+    "context" .
+    ) }}
+  {{ end }}
+
+  {{ if not (eq .Site.Params.sections.choose false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "choose"
+    "name" (.Site.Params.layouts.choose | default "choose-1")
+    "context" .
+    ) }}
+  {{ end }}
+
+  {{ if not (eq .Site.Params.sections.team false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "team"
+    "name" (.Site.Params.layouts.team | default "team-1")
+    "context" .
+    ) }}
+  {{ end }}
+
+  {{ if not (eq .Site.Params.sections.commitment false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "commitment"
+    "name" (.Site.Params.layouts.commitment | default "commitment-1")
+    "context" .
+    ) }}
+  {{ end }}
 {{ end }}

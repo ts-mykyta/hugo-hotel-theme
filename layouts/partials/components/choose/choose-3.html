@@ -1,0 +1,270 @@
+<!-- Choose Section 3: Timeline Layout -->
+<section class="choose choose-3">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ .context.Site.Params.choose.title }}</h2>
+      <h3 class="section-subtitle">{{ .context.Site.Params.choose.subtitle }}</h3>
+      <p class="section-description">{{ .context.Site.Params.choose.description }}</p>
+    </div>
+    <div class="features-timeline">
+      {{ range .context.Site.Params.choose.items }}
+      <div class="feature-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="feature-icon">
+            <i class="{{ .icon }}"></i>
+          </div>
+          <div class="feature-info">
+            <h3 class="feature-title">{{ .title }}</h3>
+            <p class="feature-description">{{ .description }}</p>
+          </div>
+        </div>
+        <div class="timeline-line"></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.choose-3 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.choose-3 .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.choose-3 .section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.choose-3 .section-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.choose-3 .section-subtitle {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.choose-3 .section-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.choose-3 .features-timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.choose-3 .features-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--accent-color);
+  opacity: 0.3;
+}
+
+.choose-3 .feature-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 50%;
+  padding-right: 40px;
+}
+
+.choose-3 .feature-item:nth-child(even) {
+  margin-left: 50%;
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+.choose-3 .timeline-dot {
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.choose-3 .feature-item:nth-child(even) .timeline-dot {
+  right: auto;
+  left: -6px;
+}
+
+.choose-3 .timeline-line {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color);
+  opacity: 0.3;
+}
+
+.choose-3 .feature-item:nth-child(even) .timeline-line {
+  right: auto;
+  left: 0;
+}
+
+.choose-3 .timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.choose-3 .timeline-content:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.choose-3 .feature-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.choose-3 .feature-icon i {
+  font-size: 1.5em;
+  color: var(--header-footer-text);
+}
+
+.choose-3 .timeline-content:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.choose-3 .feature-title {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.choose-3 .feature-description {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .choose-3 {
+    padding: 60px 0;
+  }
+
+  .choose-3 .section-title {
+    font-size: 2.2em;
+  }
+  
+  .choose-3 .section-subtitle {
+    font-size: 1.5em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .choose-3 .section-title {
+    font-size: 2em;
+  }
+  
+  .choose-3 .section-subtitle {
+    font-size: 1.3em;
+  }
+  
+  .choose-3 .section-description {
+    font-size: 1em;
+  }
+
+  .choose-3 .features-timeline::before {
+    left: 30px;
+  }
+
+  .choose-3 .feature-item {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 60px;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .choose-3 .feature-item:nth-child(even) {
+    margin-left: 0;
+    padding-left: 60px;
+  }
+
+  .choose-3 .timeline-dot {
+    left: 24px;
+    right: auto;
+  }
+
+  .choose-3 .feature-item:nth-child(even) .timeline-dot {
+    left: 24px;
+  }
+
+  .choose-3 .timeline-line {
+    left: 30px;
+    width: 30px;
+  }
+
+  .choose-3 .feature-item:nth-child(even) .timeline-line {
+    left: 30px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .choose-3 {
+    padding: 40px 0;
+  }
+
+  .choose-3 .section-title {
+    font-size: 1.8em;
+  }
+  
+  .choose-3 .section-subtitle {
+    font-size: 1.2em;
+  }
+
+  .choose-3 .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .choose-3 .feature-icon i {
+    font-size: 1.3em;
+  }
+
+  .choose-3 .feature-title {
+    font-size: 1.2em;
+  }
+
+  .choose-3 .feature-description {
+    font-size: 0.9em;
+  }
+}
+</style> 

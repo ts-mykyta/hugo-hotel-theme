@@ -1,0 +1,147 @@
+<!-- Mission Section 1: Split Design -->
+<section class="mission mission-1">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-content">
+        <h2 class="section-title">{{ .context.Site.Params.mission.title }}</h2>
+        <h3 class="section-subtitle">{{ .context.Site.Params.mission.subtitle }}</h3>
+        <p class="section-description">{{ .context.Site.Params.mission.description }}</p>
+      </div>
+      <div class="mission-image">
+        <img src="{{ .context.Site.Params.mission.image }}" alt="Our Mission">
+        <div class="image-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.mission-1 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.mission-1 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission-1 .mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.mission-1 .mission-content {
+  padding-right: 40px;
+}
+
+.mission-1 .section-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.mission-1 .section-subtitle {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.mission-1 .section-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.mission-1 .mission-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mission-1 .mission-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mission-1 .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-color) 0%, transparent 100%);
+  opacity: 0.2;
+}
+
+.mission-1 .mission-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .mission-1 {
+    padding: 60px 0;
+  }
+
+  .mission-1 .mission-grid {
+    gap: 40px;
+  }
+
+  .mission-1 .section-title {
+    font-size: 2.2em;
+  }
+  
+  .mission-1 .section-subtitle {
+    font-size: 1.5em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .mission-1 .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .mission-1 .mission-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .mission-1 .section-title {
+    font-size: 2em;
+  }
+  
+  .mission-1 .section-subtitle {
+    font-size: 1.3em;
+  }
+  
+  .mission-1 .section-description {
+    font-size: 1em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .mission-1 {
+    padding: 40px 0;
+  }
+
+  .mission-1 .section-title {
+    font-size: 1.8em;
+  }
+  
+  .mission-1 .section-subtitle {
+    font-size: 1.2em;
+  }
+}
+</style> 

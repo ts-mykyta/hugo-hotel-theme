@@ -19,6 +19,10 @@ footer = "footer-1"
 header = "header-3"
 hero = "hero-3"
 offers = "offers-2"
+mission = "mission-3"
+choose = "choose-3"
+team = "team-3"
+commitment = "commitment-3"
 
 # Доступні компоненти
 [params.layouts.available]
@@ -26,11 +30,19 @@ headers = ["header-1", "header-2", "header-3"]
 footers = ["footer-1", "footer-2", "footer-3"]
 heros = ["hero-1", "hero-2", "hero-3"]
 offers = ["offers-1", "offers-2", "offers-3"]
+missions = ["mission-1", "mission-2", "mission-3"]
+choose = ["choose-1", "choose-2", "choose-3"]
+teams = ["team-1", "team-2", "team-3"]
+commitments = ["commitment-1", "commitment-2", "commitment-3"]
 
 # Керування секціями
 [params.sections]
 hero = true
 offers = true
+mission = true
+choose = true
+team = true
+commitment = true
 
 # Налаштування сторінок
 [params.pages]
@@ -89,3 +101,35 @@ weight = 2
 name = "Contact"
 url = "/contact"
 weight = 3
+
+# Додавання нових параметрів
+[params.mission]
+  title = "Our Mission"
+  subtitle = "Excellence in Hospitality"
+  description = "We strive to provide exceptional service and unforgettable experiences to our guests"
+  image = "/images/mission.webp"
+
+[params.choose]
+  title = "Why Choose Us"
+  subtitle = "Experience the Difference"
+  description = "Discover what makes our hotel the perfect choice for your stay"
+  items = [
+    { icon = "fas fa-star", title = "Luxury Comfort", description = "Experience ultimate comfort in our elegantly appointed rooms" },
+    { icon = "fas fa-map-marker-alt", title = "Prime Location", description = "Located in the heart of the city with easy access to attractions" },
+    { icon = "fas fa-concierge-bell", title = "Exceptional Service", description = "Our dedicated staff ensures your stay is nothing short of perfect" }
+  ]
+
+[params.team]
+  title = "Our Team"
+  subtitle = "Meet the People Behind Our Success"
+  description = "Our experienced team is dedicated to providing you with the best service"
+  members = [
+    { name = "John Doe", position = "General Manager", image = "/images/team/john.jpg" },
+    { name = "Jane Smith", position = "Head Chef", image = "/images/team/jane.jpg" },
+    { name = "Mike Johnson", position = "Guest Relations Manager", image = "/images/team/mike.jpg" }
+  ]
+
+[params.commitment]
+  title = "Our Commitment"
+  description = "We are committed to providing you with the best possible experience"
+  email = "info@luxuryhotel.com"
