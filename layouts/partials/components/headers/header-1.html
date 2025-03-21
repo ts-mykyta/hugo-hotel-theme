@@ -1,0 +1,162 @@
+<!-- Header 1: Horizontal Layout -->
+<header class="header header-1">
+  <div class="container header-container">
+    <a href="/" class="logo">{{ .context.Site.Title }}</a>
+    
+    <nav class="nav-menu">
+      {{ range .context.Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </nav>
+
+    <div class="social-icons">
+      {{ with .context.Site.Params.social }}
+        {{ if .twitter }}<a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>{{ end }}
+        {{ if .facebook }}<a href="{{ .facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>{{ end }}
+        {{ if .instagram }}<a href="{{ .instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>{{ end }}
+        {{ if .youtube }}<a href="{{ .youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>{{ end }}
+      {{ end }}
+    </div>
+
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<style>
+.header-1 {
+  background-color: var(--header-footer-color);
+}
+
+.header-1 .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.header-1 .nav-menu {
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header-1 .nav-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-1 .nav-menu li a:hover {
+  color: var(--accent-color);
+}
+
+.header-1 .nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.header-1 .nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.header-1 .social-icons {
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.header-1 .social-icons a {
+  color: var(--text-color);
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.header-1 .social-icons a:hover {
+  color: var(--accent-color);
+}
+
+.header-1 .mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .header-1 .nav-menu {
+    margin: 0 15px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-1 .header-container {
+    padding: 0 15px;
+  }
+
+  .header-1 .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-1 .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background-color: var(--header-footer-color);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1001;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  .header-1 .nav-menu.active {
+    display: flex;
+  }
+
+  .header-1 .nav-menu li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+  }
+
+  .header-1 .nav-menu li a:hover {
+    color: var(--accent-color);
+    padding-left: 10px;
+  }
+
+  .header-1 .nav-menu li a::after {
+    display: none;
+  }
+
+  .header-1 .social-icons {
+    margin: 20px 0;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .header-1 .header-container {
+    padding: 0 10px;
+  }
+}
+</style>

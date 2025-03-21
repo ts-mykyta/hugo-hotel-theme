@@ -1,3 +1,54 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hotel Theme"
+
+# Основні параметри сайту
+
+[params]
+description = "A modular Hugo theme example"
+keywords = "Some keywords"
+main_color = "#ffffff"
+header_and_footer_color = "#b1b1b1"
+header_and_footer_text = "#ffffff"
+text_color = "#333333"
+accent_color = "#007bff"
+hover_color = "#0056b3"
+
+# Налаштування компонентів
+[params.layouts]
+footer = "footer-1"
+header = "header-3"
+
+# Доступні компоненти
+[params.layouts.available]
+headers = ["header-1", "header-2", "header-3"]
+footers = ["footer-1", "footer-2", "footer-3"]
+
+# Керування секціями
+[params.sections]
+fantasyApp = true
+reviews = true
+phoneInputTop = false
+phoneInputBottom = true
+disclaimer = true
+
+[params.social]
+twitter = "https://twitter.com/"
+facebook = "https://facebook.com/"
+instagram = "https://instagram.com/"
+youtube = "https://youtube.com/"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 3

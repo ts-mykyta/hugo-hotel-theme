@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<!-- Відображення секцій залежно від налаштувань -->
+
+{{ if not (eq .Site.Params.sections.fantasyApp false) }}
+
+{{ partial "component-loader.html" (dict
+
+"type" "fantasy-app"
+
+"name" (.Site.Params.layouts.fantasyApp | default "fantasy-1")
+
+"context" .
+
+) }}
+
+{{ end }}
+
+{{ if not (eq .Site.Params.sections.reviews false) }}
+
+{{ partial "component-loader.html" (dict
+
+"type" "reviews"
+
+"name" (.Site.Params.layouts.reviews | default "reviews-1")
+
+"context" .
+
+) }}
+
+{{ end }}
+
+{{ if not (eq .Site.Params.sections.phoneInputBottom false) }}
+
+{{ partial "component-loader.html" (dict
+
+"type" "phone-input"
+
+"name" (.Site.Params.layouts.phoneInput | default "phone-input-1")
+
+"context" .
+
+) }}
+
+{{ end }}
+
+{{ end }}

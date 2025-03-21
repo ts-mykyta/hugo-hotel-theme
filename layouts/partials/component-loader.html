@@ -1,0 +1,21 @@
+{{- $componentType := .type -}}
+
+{{- $componentName := .name -}}
+
+{{- if not $componentName -}}
+
+{{- $componentName = index (index $.Site.Params.layouts.available $componentType) 0 -}}
+
+{{- end -}}
+
+{{- $path := printf "components/%s/%s.html" $componentType $componentName -}}
+
+{{- if templates.Exists (printf "partials/%s" $path) -}}
+
+{{ partial $path . }}
+
+{{- else -}}
+
+<!-- Компонент не знайдено: {{ $path }} -->
+
+{{- end -}}
