@@ -3,11 +3,11 @@
 
 :root {
   --main-color: #ffffff;
-  --header-footer-color: #b1b1b1;
+  --header-footer-color: #1b1b1b;
   --header-footer-text: #ffffff;
   --text-color: #333333;
-  --accent-color: #007bff;
-  --hover-color: #0056b3;
+  --accent-color: tomato;
+  --hover-color: tomato;
   --max-width: 1440px;
   /* --header-height: 80px; */
   --mobile-breakpoint: 768px;
