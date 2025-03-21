@@ -1,0 +1,146 @@
+<!-- Mission Section 3: Card Design -->
+<section class="mission mission-3">
+  <div class="container">
+    <div class="mission-content">
+      <h2 class="section-title">{{ .context.Site.Params.mission.title }}</h2>
+      <h3 class="section-subtitle">{{ .context.Site.Params.mission.subtitle }}</h3>
+      <p class="section-description">{{ .context.Site.Params.mission.description }}</p>
+    </div>
+    <div class="mission-image">
+      <img src="{{ .context.Site.Params.mission.image }}" alt="Our Mission">
+      <div class="image-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.mission-3 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.mission-3 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission-3 .mission-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.mission-3 .section-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.mission-3 .section-subtitle {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.mission-3 .section-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.mission-3 .mission-image {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.mission-3 .mission-image:hover {
+  transform: translateY(-10px);
+}
+
+.mission-3 .mission-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mission-3 .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-color) 0%, transparent 100%);
+  opacity: 0.2;
+}
+
+.mission-3 .mission-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .mission-3 {
+    padding: 60px 0;
+  }
+
+  .mission-3 .section-title {
+    font-size: 2.2em;
+  }
+  
+  .mission-3 .section-subtitle {
+    font-size: 1.5em;
+  }
+
+  .mission-3 .mission-image img {
+    height: 350px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .mission-3 .section-title {
+    font-size: 2em;
+  }
+  
+  .mission-3 .section-subtitle {
+    font-size: 1.3em;
+  }
+  
+  .mission-3 .section-description {
+    font-size: 1em;
+  }
+
+  .mission-3 .mission-image img {
+    height: 300px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .mission-3 {
+    padding: 40px 0;
+  }
+
+  .mission-3 .section-title {
+    font-size: 1.8em;
+  }
+  
+  .mission-3 .section-subtitle {
+    font-size: 1.2em;
+  }
+
+  .mission-3 .mission-image img {
+    height: 250px;
+  }
+}
+</style> 

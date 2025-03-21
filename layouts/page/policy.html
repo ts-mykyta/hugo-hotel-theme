@@ -1,0 +1,155 @@
+{{ define "main" }}
+<!-- Policy Page -->
+<section class="policy-page">
+  <div class="container">
+    <div class="policy-header">
+      <h1 class="policy-title">{{ .Title }}</h1>
+      <p class="policy-description">{{ .Description }}</p>
+    </div>
+    
+    <div class="policy-content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+<style>
+.policy-page {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+  min-height: 100vh;
+}
+
+.policy-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.policy-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.policy-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.policy-description {
+  font-size: 1.2em;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.policy-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  line-height: 1.8;
+}
+
+.policy-content h2 {
+  font-size: 1.8em;
+  margin: 40px 0 20px;
+  color: var(--accent-color);
+}
+
+.policy-content h2:first-child {
+  margin-top: 0;
+}
+
+.policy-content h3 {
+  font-size: 1.4em;
+  margin: 30px 0 15px;
+  color: var(--accent-color);
+}
+
+.policy-content p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.policy-content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.policy-content li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.policy-content li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: -20px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .policy-page {
+    padding: 60px 0;
+  }
+
+  .policy-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .policy-page {
+    padding: 40px 0;
+  }
+
+  .policy-content {
+    padding: 30px;
+  }
+
+  .policy-title {
+    font-size: 2em;
+  }
+
+  .policy-description {
+    font-size: 1.1em;
+  }
+
+  .policy-content h2 {
+    font-size: 1.6em;
+  }
+
+  .policy-content h3 {
+    font-size: 1.3em;
+  }
+
+  .policy-content p {
+    font-size: 1em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .policy-title {
+    font-size: 1.8em;
+  }
+
+  .policy-content {
+    padding: 20px;
+  }
+
+  .policy-content h2 {
+    font-size: 1.4em;
+  }
+
+  .policy-content h3 {
+    font-size: 1.2em;
+  }
+}
+</style>
+{{ end }}

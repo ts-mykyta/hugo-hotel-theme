@@ -1,0 +1,111 @@
+<!-- Commitment Section 1: Centered Design -->
+<section class="commitment commitment-1">
+  <div class="container">
+    <div class="commitment-content">
+      <h2 class="commitment-title">{{ .context.Site.Params.commitment.title }}</h2>
+      <p class="commitment-description">{{ .context.Site.Params.commitment.description }}</p>
+      <a href="mailto:{{ .context.Site.Params.commitment.email }}" class="commitment-email">
+        {{ .context.Site.Params.commitment.email }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.commitment-1 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.commitment-1 .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.commitment-1 .commitment-content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.commitment-1 .commitment-content:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.commitment-1 .commitment-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.commitment-1 .commitment-description {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.commitment-1 .commitment-email {
+  display: inline-block;
+  font-size: 1.1em;
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.commitment-1 .commitment-email:hover {
+  background-color: var(--accent-color);
+  color: var(--header-footer-text);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .commitment-1 {
+    padding: 60px 0;
+  }
+
+  .commitment-1 .commitment-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .commitment-1 .commitment-title {
+    font-size: 2em;
+  }
+  
+  .commitment-1 .commitment-description {
+    font-size: 1.1em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .commitment-1 {
+    padding: 40px 0;
+  }
+
+  .commitment-1 .commitment-title {
+    font-size: 1.8em;
+  }
+  
+  .commitment-1 .commitment-description {
+    font-size: 1em;
+  }
+
+  .commitment-1 .commitment-email {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+</style> 

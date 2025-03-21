@@ -1,0 +1,165 @@
+<!-- Commitment Section 3: Card Design -->
+<section class="commitment commitment-3">
+  <div class="container">
+    <div class="commitment-content">
+      <div class="commitment-card">
+        <div class="commitment-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h2 class="commitment-title">{{ .context.Site.Params.commitment.title }}</h2>
+        <p class="commitment-description">{{ .context.Site.Params.commitment.description }}</p>
+        <a href="mailto:{{ .context.Site.Params.commitment.email }}" class="commitment-email">
+          <i class="fas fa-envelope"></i>
+          {{ .context.Site.Params.commitment.email }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.commitment-3 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.commitment-3 .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.commitment-3 .commitment-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commitment-3 .commitment-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+}
+
+.commitment-3 .commitment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.commitment-3 .commitment-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  transition: transform 0.3s ease;
+}
+
+.commitment-3 .commitment-icon i {
+  font-size: 2em;
+  color: var(--header-footer-text);
+}
+
+.commitment-3 .commitment-card:hover .commitment-icon {
+  transform: scale(1.1);
+}
+
+.commitment-3 .commitment-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.commitment-3 .commitment-description {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.commitment-3 .commitment-email {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1em;
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.commitment-3 .commitment-email i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.commitment-3 .commitment-email:hover {
+  background-color: var(--accent-color);
+  color: var(--header-footer-text);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .commitment-3 {
+    padding: 60px 0;
+  }
+
+  .commitment-3 .commitment-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .commitment-3 .commitment-card {
+    padding: 40px 30px;
+  }
+
+  .commitment-3 .commitment-title {
+    font-size: 2em;
+  }
+  
+  .commitment-3 .commitment-description {
+    font-size: 1.1em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .commitment-3 {
+    padding: 40px 0;
+  }
+
+  .commitment-3 .commitment-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .commitment-3 .commitment-icon i {
+    font-size: 1.5em;
+  }
+
+  .commitment-3 .commitment-title {
+    font-size: 1.8em;
+  }
+  
+  .commitment-3 .commitment-description {
+    font-size: 1em;
+  }
+
+  .commitment-3 .commitment-email {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+}
+</style> 
