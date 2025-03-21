@@ -5,7 +5,7 @@
   --main-color: #ffffff;
   --header-footer-color: #1b1b1b;
   --header-footer-text: #ffffff;
-  --text-color: #333333;
+  --text-color: #fff;
   --accent-color: tomato;
   --hover-color: tomato;
   --max-width: 1440px;
@@ -19,6 +19,10 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {
@@ -67,7 +71,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.nav-menu li {
+.nav-menu li:not(:first-child) {
   margin-left: 30px;
 }
 

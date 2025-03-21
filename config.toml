@@ -16,8 +16,8 @@ hover_color = "#0056b3"
 
 # Налаштування компонентів
 [params.layouts]
-footer = "footer-1"
-header = "header-3"
+footer = "footer-2"
+header = "header-2"
 
 # Доступні компоненти
 [params.layouts.available]
@@ -31,6 +31,23 @@ reviews = true
 phoneInputTop = false
 phoneInputBottom = true
 disclaimer = true
+
+# Налаштування футера
+[params.footer]
+terms_url = "/terms"
+terms_text = "Terms & Conditions"
+privacy_url = "/privacy"
+privacy_text = "Privacy Policy"
+copyright_text = "All rights reserved."
+
+# Налаштування контактної форми
+[params.contact]
+title = "Get in Touch"
+name_placeholder = "Your Name"
+email_placeholder = "Your Email"
+message_placeholder = "Your Message"
+submit_text = "Send Message"
+form_action = "/contact"
 
 [params.social]
 twitter = "https://twitter.com/"

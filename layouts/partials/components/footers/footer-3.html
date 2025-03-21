@@ -1,0 +1,248 @@
+<!-- Footer 3: Modern Layout -->
+<footer class="footer footer-3">
+  <div class="container">
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-content">
+        <h2>{{ .context.Site.Params.contact.title }}</h2>
+        <form class="contact-form" action="{{ .context.Site.Params.contact.form_action }}" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="{{ .context.Site.Params.contact.name_placeholder }}" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="{{ .context.Site.Params.contact.email_placeholder }}" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="{{ .context.Site.Params.contact.message_placeholder }}" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">{{ .context.Site.Params.contact.submit_text }}</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Bottom Section -->
+    <section class="footer-bottom">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo">{{ .context.Site.Title }}</a>
+          <div class="social-icons">
+            {{ with .context.Site.Params.social }}
+              {{ if .twitter }}<a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>{{ end }}
+              {{ if .facebook }}<a href="{{ .facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>{{ end }}
+              {{ if .instagram }}<a href="{{ .instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>{{ end }}
+              {{ if .youtube }}<a href="{{ .youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>{{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="{{ .context.Site.Params.footer.terms_url }}">{{ .context.Site.Params.footer.terms_text }}</a>
+          <a href="{{ .context.Site.Params.footer.privacy_url }}">{{ .context.Site.Params.footer.privacy_text }}</a>
+        </div>
+
+        <div class="copyright">
+          © {{ now.Year }} {{ .context.Site.Title }}. {{ .context.Site.Params.footer.copyright_text }}
+        </div>
+      </div>
+    </section>
+  </div>
+</footer>
+
+<style>
+.footer-3 {
+  background-color: var(--header-footer-color);
+  padding: 60px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+}
+
+.footer-3 .contact-section {
+  margin-bottom: 50px;
+}
+
+.footer-3 .contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-3 .contact-section h2 {
+  color: var(--text-color);
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.footer-3 .contact-form {
+  max-width: 100%;
+}
+
+.footer-3 .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-3 .form-group {
+  margin-bottom: 20px;
+}
+
+.footer-3 .form-group input,
+.footer-3 .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.05);
+  color: var(--text-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.footer-3 .form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.footer-3 .form-group input:focus,
+.footer-3 .form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.footer-3 .submit-btn {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.footer-3 .submit-btn:hover {
+  background-color: var(--text-color);
+  color: var(--header-footer-color);
+}
+
+.footer-3 .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+}
+
+.footer-3 .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-3 .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-3 .logo {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.footer-3 .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-3 .social-icons a {
+  color: var(--text-color);
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.footer-3 .social-icons a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.footer-3 .footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-3 .footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-3 .footer-links a:hover {
+  color: var(--accent-color);
+}
+
+.footer-3 .copyright {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .footer-3 {
+    padding: 40px 0 20px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .footer-3 .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-3 .contact-section h2 {
+    font-size: 1.8em;
+  }
+
+  .footer-3 .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-3 .footer-brand {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-3 .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .footer-3 {
+    padding: 30px 0 15px;
+  }
+
+  .footer-3 .contact-section h2 {
+    font-size: 1.5em;
+  }
+}
+</style> 
