@@ -25,12 +25,16 @@
   <!-- Alpine.js -->
   <script defer src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
 
-
-
   <!-- Додаткові стилі -->
-
   <style>
-    /* Ваші базові стилі */
+    :root {
+      --main-color: {{ .Site.Params.main_color }};
+      --header-footer-color: {{ .Site.Params.header_and_footer_color }};
+      --header-footer-text: {{ .Site.Params.header_and_footer_text }};
+      --text-color: {{ .Site.Params.text_color }};
+      --accent-color: {{ .Site.Params.accent_color }};
+      --hover-color: {{ .Site.Params.hover_color }};
+    }
   </style>
 
 </head>

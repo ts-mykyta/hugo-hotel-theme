@@ -2,14 +2,7 @@
 @import 'normalize.css';
 
 :root {
-  --main-color: #ffffff;
-  --header-footer-color: #1b1b1b;
-  --header-footer-text: #ffffff;
-  --text-color: #fff;
-  --accent-color: tomato;
-  --hover-color: tomato;
   --max-width: 1440px;
-  /* --header-height: 80px; */
   --mobile-breakpoint: 768px;
   --tablet-breakpoint: 1024px;
 }
@@ -19,19 +12,77 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+  background-color: var(--main-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+/* Container */
 .container {
-  max-width: var(--max-width);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
 }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--header-footer-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+}
+
+/* Forms */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
 
 /* Common header styles */
 .header {

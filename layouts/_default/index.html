@@ -1,18 +1,18 @@
 {{ define "main" }}
-
 <!-- Відображення секцій залежно від налаштувань -->
+  {{ if not (eq .Site.Params.sections.hero false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "hero"
+    "name" (.Site.Params.layouts.hero | default "hero-1")
+    "context" .
+    ) }}
+  {{ end }}
 
-{{ if not (eq .Site.Params.sections.hero false) }}
-
-{{ partial "component-loader.html" (dict
-
-"type" "hero"
-
-"name" (.Site.Params.layouts.hero | default "hero-1")
-
-"context" .
-
-) }}
-
-{{ end }}
+  {{ if not (eq .Site.Params.sections.offers false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "offers"
+    "name" (.Site.Params.layouts.offers | default "offers-1")
+    "context" .
+    ) }}
+  {{ end }}
 {{ end }}

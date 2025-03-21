@@ -1,0 +1,144 @@
+<!-- Offers Section 1: Modern Cards -->
+<section class="offers offers-1">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ .context.Site.Params.offers.title }}</h2>
+      <p class="section-subtitle">{{ .context.Site.Params.offers.subtitle }}</p>
+    </div>
+    <div class="offers-grid">
+      {{ range .context.Site.Params.offers.items }}
+      <div class="offer-card">
+        <div class="offer-icon">
+          <i class="{{ .icon }}"></i>
+        </div>
+        <h3 class="offer-title">{{ .title }}</h3>
+        <p class="offer-description">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.offers-1 {
+  padding: 80px 0;
+  background-color: var(--main-color);
+}
+
+.offers-1 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offers-1 .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.offers-1 .section-title {
+  font-size: 2.5em;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.offers-1 .section-subtitle {
+  font-size: 1.2em;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.offers-1 .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.offers-1 .offer-card {
+  background-color: var(--header-footer-color);
+  padding: 40px 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: var(--header-footer-text);
+}
+
+.offers-1 .offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.offers-1 .offer-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offers-1 .offer-icon i {
+  font-size: 2em;
+  color: var(--header-footer-text);
+}
+
+.offers-1 .offer-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.offers-1 .offer-description {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .offers-1 {
+    padding: 60px 0;
+  }
+
+  .offers-1 .section-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .offers-1 {
+    padding: 50px 0;
+  }
+
+  .offers-1 .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offers-1 .section-title {
+    font-size: 2em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .offers-1 {
+    padding: 40px 0;
+  }
+
+  .offers-1 .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-1 .section-title {
+    font-size: 1.8em;
+  }
+
+  .offers-1 .offer-card {
+    padding: 30px 20px;
+  }
+}
+</style> 

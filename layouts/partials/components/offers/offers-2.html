@@ -1,0 +1,148 @@
+<!-- Offers Section 2: Minimal Design -->
+<section class="offers offers-2">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ .context.Site.Params.offers.title }}</h2>
+      <p class="section-subtitle">{{ .context.Site.Params.offers.subtitle }}</p>
+    </div>
+    <div class="offers-grid">
+      {{ range .context.Site.Params.offers.items }}
+      <div class="offer-card">
+        <div class="offer-icon">
+          <i class="{{ .icon }}"></i>
+        </div>
+        <div class="offer-content">
+          <h3 class="offer-title">{{ .title }}</h3>
+          <p class="offer-description">{{ .description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.offers-2 {
+  padding: 80px 0;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.offers-2 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offers-2 .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.offers-2 .section-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.offers-2 .section-subtitle {
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+.offers-2 .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.offers-2 .offer-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.offers-2 .offer-card:hover {
+  transform: translateX(10px);
+}
+
+.offers-2 .offer-icon {
+  flex: 0 0 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offers-2 .offer-icon i {
+  font-size: 1.5em;
+  color: var(--header-footer-text);
+}
+
+.offers-2 .offer-content {
+  flex: 1;
+}
+
+.offers-2 .offer-title {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.offers-2 .offer-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .offers-2 {
+    padding: 60px 0;
+  }
+
+  .offers-2 .section-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .offers-2 {
+    padding: 50px 0;
+  }
+
+  .offers-2 .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .offers-2 .section-title {
+    font-size: 2em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .offers-2 {
+    padding: 40px 0;
+  }
+
+  .offers-2 .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-2 .section-title {
+    font-size: 1.8em;
+  }
+
+  .offers-2 .offer-card {
+    padding: 15px;
+  }
+}
+</style> 
