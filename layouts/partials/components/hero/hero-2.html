@@ -11,6 +11,10 @@
           <h1 class="hero-title">{{ .context.Site.Params.pages.about.hero.title }}</h1>
           <h2 class="hero-subtitle">{{ .context.Site.Params.pages.about.hero.subtitle }}</h2>
           <p class="hero-description">{{ .context.Site.Params.pages.about.hero.description }}</p>
+        {{ else if eq .context.RelPermalink "/contact/" }}
+          <h1 class="hero-title">{{ .context.Site.Params.pages.contact.hero.title }}</h1>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.contact.hero.subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.contact.hero.description }}</p>
         {{ end }}
       </div>
       <div class="hero-image">

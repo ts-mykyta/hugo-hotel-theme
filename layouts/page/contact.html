@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ if not (eq .Site.Params.sections.hero false) }}
+    {{ partial "component-loader.html" (dict
+    "type" "hero"
+    "name" (.Site.Params.layouts.hero | default "hero-1")
+    "context" .
+    ) }}
+  {{ end }}
+{{ end }}

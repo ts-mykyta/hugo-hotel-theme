@@ -54,6 +54,9 @@ commitment = true
     hero = { title = "About Our Hotel", subtitle = "Your Luxury Destination", description = "Experience the perfect blend of comfort and elegance" }
     about = { title = "About Us", subtitle = "Welcome to our hotel - where luxury meets comfort", description = "Discover our story, mission, and commitment to excellence in hospitality" }
 
+  [params.pages.contact]
+    hero = {title = "Contact us!", subtitle = "Contact us as soon as possible", description = "We always happy to contact with our client!"}
+
 # Налаштування секції "What we offer"
 [params.offers]
 items = [
