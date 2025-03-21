@@ -1,0 +1,4 @@
+{{ define "main" }}
+  {{ $type := .File.TranslationBaseName }}
+  {{ partial "components/hotels/hotel-1.html" (dict "context" . "type" $type) }}
+{{ end }}

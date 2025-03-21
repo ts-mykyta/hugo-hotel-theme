@@ -96,14 +96,29 @@ url = "/"
 weight = 1
 
 [[menu.main]]
+name = "Art Hotels"
+url = "/art-hotels/"
+weight = 2
+
+[[menu.main]]
+name = "Spa Hotels"
+url = "/spa-hotels/"
+weight = 3
+
+[[menu.main]]
+name = "Eco Hotels"
+url = "/eco-hotels/"
+weight = 4
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 2
+weight = 5
 
 [[menu.main]]
 name = "Contact"
 url = "/contact"
-weight = 3
+weight = 6
 
 # Додавання нових параметрів
 [params.mission]
@@ -136,3 +151,49 @@ weight = 3
   title = "Our Commitment"
   description = "We are committed to providing you with the best possible experience"
   email = "info@luxuryhotel.com"
+
+# Готелі
+[params.hotels]
+
+  [[params.hotels.list]]
+  title = "Urban Canvas"
+  type = "art-hotels"
+  image = "/images/art.jpg"
+  description = "Graffiti-inspired downtown hotel."
+
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+  [[params.hotels.list]]
+  title = "Relax SPA"
+  type = "spa-hotels"
+  image = "/images/spa.jpg"
+  description = "Total wellness and luxury."
+
+  [[params.hotels.list]]
+  title = "Forest Breeze"
+  type = "eco-hotels"
+  image = "/images/eco.jpg"
+  description = "Eco-friendly cabins in the woods."
