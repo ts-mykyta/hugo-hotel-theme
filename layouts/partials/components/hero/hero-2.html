@@ -1,0 +1,186 @@
+<!-- Hero Section 2: Split Layout -->
+<section class="hero hero-2">
+  <div class="hero-split">
+    <div class="hero-content">
+      <div class="content-wrapper">
+        <h1 class="hero-title">{{ .context.Site.Params.hero.title }}</h1>
+        <p class="hero-description">{{ .context.Site.Params.hero.description }}</p>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero-2 {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.hero-2 .hero-split {
+  display: flex;
+  height: 100%;
+}
+
+.hero-2 .hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text);
+}
+
+.hero-2 .content-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.hero-2 .hero-image {
+  flex: 1;
+  position: relative;
+  background-color: var(--accent-color);
+}
+
+.hero-2 .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--header-footer-color);
+  opacity: 0.1;
+}
+
+.hero-2 .hero-title {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-2 .hero-subtitle {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero-2 .hero-description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-2 .hero-cta {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--accent-color);
+  color: var(--header-footer-text);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-2 .hero-cta:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .hero-2 {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .hero-2 .hero-title {
+    font-size: 3em;
+  }
+  
+  .hero-2 .hero-subtitle {
+    font-size: 1.5em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero-2 {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .hero-2 .hero-split {
+    flex-direction: column;
+  }
+
+  .hero-2 .hero-content {
+    padding: 40px 20px;
+    order: 2;
+  }
+
+  .hero-2 .hero-image {
+    height: 200px;
+    order: 1;
+  }
+
+  .hero-2 .hero-title {
+    font-size: 2.5em;
+  }
+  
+  .hero-2 .hero-subtitle {
+    font-size: 1.3em;
+  }
+  
+  .hero-2 .hero-description {
+    font-size: 1.1em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .hero-2 {
+    min-height: 250px;
+  }
+
+  .hero-2 .hero-image {
+    height: 150px;
+  }
+
+  .hero-2 .hero-title {
+    font-size: 2em;
+  }
+  
+  .hero-2 .hero-subtitle {
+    font-size: 1.1em;
+  }
+  
+  .hero-2 .hero-description {
+    font-size: 1em;
+  }
+  
+  .hero-2 .hero-cta {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+}
+</style> 

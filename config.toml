@@ -1,0 +1,92 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hotel Theme"
+
+# Основні параметри сайту
+
+[params]
+description = "A modular Hugo theme example"
+keywords = "Some keywords"
+main_color = "#ffffff"
+header_and_footer_color = "#1b1b1b"
+header_and_footer_text = "#fff"
+text_color = "#fff"
+accent_color = "tomato"
+hover_color = "tomato"
+
+# Налаштування компонентів
+[params.layouts]
+footer = "footer-1"
+header = "header-3"
+hero = "hero-1"
+offers = "offers-2"
+
+# Доступні компоненти
+[params.layouts.available]
+headers = ["header-1", "header-2", "header-3"]
+footers = ["footer-1", "footer-2", "footer-3"]
+heros = ["hero-1", "hero-2", "hero-3"]
+offers = ["offers-1", "offers-2", "offers-3"]
+
+# Налаштування hero секції
+[params.hero]
+title = "Welcome to Our Luxury Hotel"
+subtitle = "Experience Unparalleled Comfort"
+description = "Discover a world of luxury and relaxation at our hotel. We offer exceptional service, stunning views, and unforgettable experiences."
+cta_text = "Book Now"
+cta_url = "/booking"
+background_image = "/images/hero-bg.jpg"
+overlay_opacity = 0.5
+
+# Налаштування секції "What we offer"
+[params.offers]
+title = "What We Offer"
+subtitle = "Experience Luxury and Comfort"
+items = [
+  { icon = "fas fa-bed", title = "Luxury Rooms", description = "Experience ultimate comfort in our elegantly appointed rooms with premium amenities and stunning views." },
+  { icon = "fas fa-utensils", title = "Fine Dining", description = "Savor exquisite cuisine prepared by world-class chefs in our restaurants and cafes." },
+  { icon = "fas fa-spa", title = "Spa & Wellness", description = "Rejuvenate your body and mind with our comprehensive spa treatments and wellness programs." }
+]
+
+# Керування секціями
+[params.sections]
+hero = true
+offers = true
+
+# Налаштування футера
+[params.footer]
+terms_url = "/terms"
+terms_text = "Terms & Conditions"
+privacy_url = "/privacy"
+privacy_text = "Privacy Policy"
+copyright_text = "All rights reserved."
+
+# Налаштування контактної форми
+[params.contact]
+title = "Get in Touch"
+name_placeholder = "Your Name"
+email_placeholder = "Your Email"
+message_placeholder = "Your Message"
+submit_text = "Send Message"
+form_action = "/contact"
+
+[params.social]
+twitter = "https://twitter.com/"
+facebook = "https://facebook.com/"
+instagram = "https://instagram.com/"
+youtube = "https://youtube.com/"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 3

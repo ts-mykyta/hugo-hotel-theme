@@ -1,0 +1,196 @@
+<!-- Offers Section 3: Modern Design with Hover Effects -->
+<section class="offers offers-3">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ .context.Site.Params.offers.title }}</h2>
+      <p class="section-subtitle">{{ .context.Site.Params.offers.subtitle }}</p>
+    </div>
+    <div class="offers-grid">
+      {{ range .context.Site.Params.offers.items }}
+      <div class="offer-card">
+        <div class="offer-icon">
+          <i class="{{ .icon }}"></i>
+        </div>
+        <div class="offer-content">
+          <h3 class="offer-title">{{ .title }}</h3>
+          <p class="offer-description">{{ .description }}</p>
+        </div>
+        <div class="offer-hover">
+          <div class="hover-content">
+            <i class="{{ .icon }}"></i>
+            <h3>{{ .title }}</h3>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.offers-3 {
+  padding: 80px 0;
+  background-color: var(--main-color);
+}
+
+.offers-3 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offers-3 .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.offers-3 .section-title {
+  font-size: 2.5em;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.offers-3 .section-subtitle {
+  font-size: 1.2em;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.offers-3 .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.offers-3 .offer-card {
+  position: relative;
+  background-color: var(--header-footer-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: var(--header-footer-text);
+}
+
+.offers-3 .offer-card:hover {
+  transform: translateY(-10px);
+}
+
+.offers-3 .offer-card:hover .offer-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.offers-3 .offer-icon {
+  width: 70px;
+  height: 70px;
+  margin: 30px auto 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.offers-3 .offer-card:hover .offer-icon {
+  transform: scale(0.9);
+}
+
+.offers-3 .offer-icon i {
+  font-size: 1.8em;
+  color: var(--header-footer-text);
+}
+
+.offers-3 .offer-content {
+  padding: 0 30px 30px;
+  text-align: center;
+}
+
+.offers-3 .offer-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.offers-3 .offer-description {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.offers-3 .offer-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.offers-3 .hover-content {
+  text-align: center;
+  color: var(--header-footer-text);
+}
+
+.offers-3 .hover-content i {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.offers-3 .hover-content h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .offers-3 {
+    padding: 60px 0;
+  }
+
+  .offers-3 .section-title {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .offers-3 {
+    padding: 50px 0;
+  }
+
+  .offers-3 .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offers-3 .section-title {
+    font-size: 2em;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .offers-3 {
+    padding: 40px 0;
+  }
+
+  .offers-3 .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-3 .section-title {
+    font-size: 1.8em;
+  }
+
+  .offers-3 .offer-content {
+    padding: 0 20px 20px;
+  }
+}
+</style> 

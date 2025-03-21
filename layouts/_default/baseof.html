@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+  dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+  <meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.description }}{{ end }}">
+
+  <meta name="keywords" content="{{ if .IsHome }}{{ .Site.Params.keywords }}{{ else }}{{ .Params.keywords }}{{ end }}">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/icons.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
+  <!-- Додаткові стилі -->
+  <style>
+    :root {
+      --main-color: {{ .Site.Params.main_color }};
+      --header-footer-color: {{ .Site.Params.header_and_footer_color }};
+      --header-footer-text: {{ .Site.Params.header_and_footer_text }};
+      --text-color: {{ .Site.Params.text_color }};
+      --accent-color: {{ .Site.Params.accent_color }};
+      --hover-color: {{ .Site.Params.hover_color }};
+    }
+  </style>
+
+</head>
+
+<body>
+  {{/* Завантаження вибраного header */}}
+  {{ partial "component-loader.html" (dict "type" "headers" "name" $.Site.Params.layouts.header "context" .) }}
+
+
+  <main class="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- Завантаження додаткових секцій з перевіркою прапорців у конфігурації -->
+  {{ if not (eq .Site.Params.sections.disclaimer false) }}
+
+  {{ partial "component-loader.html" (dict
+
+  "type" "disclaimer"
+
+  "name" (.Site.Params.layouts.disclaimer | default "disclaimer-1")
+
+  "context" .
+
+  ) }}
+
+  {{ end }}
+
+  {{/* Завантаження вибраного footer */}}
+  {{ partial "component-loader.html" (dict "type" "footers" "name" $.Site.Params.layouts.footer "context" .) }}
+
+
+  <!-- Додаткові скрипти -->
+  <script>
+    // Базові JavaScript функції
+  </script>
+
+  <script src="/js/script.js"></script>
+
+</body>
+</html>

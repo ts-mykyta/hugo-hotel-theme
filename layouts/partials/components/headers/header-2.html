@@ -1,0 +1,175 @@
+<!-- Header 2: Vertical Layout -->
+<header class="header header-2">
+  <div class="container header-container">
+    <div class="header-top">
+      <a href="/" class="logo">{{ .context.Site.Title }}</a>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="header-bottom">
+      <nav class="nav-menu">
+        {{ range .context.Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </nav>
+
+      <div class="social-icons">
+        {{ with .context.Site.Params.social }}
+          {{ if .twitter }}<a href="{{ .twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>{{ end }}
+          {{ if .facebook }}<a href="{{ .facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>{{ end }}
+          {{ if .instagram }}<a href="{{ .instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>{{ end }}
+          {{ if .youtube }}<a href="{{ .youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>{{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+.header-2 {
+  background: linear-gradient(to right, var(--header-footer-color), var(--accent-color));
+}
+
+.header-2 .header-container {
+  flex-direction: column;
+  padding: 0;
+}
+
+.header-2 .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-2 .header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-2 .nav-menu {
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header-2 .nav-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 5px 0;
+  position: relative;
+}
+
+.header-2 .nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: width 0.3s ease;
+}
+
+.header-2 .nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.header-2 .social-icons {
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.header-2 .social-icons a {
+  color: var(--text-color);
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.header-2 .social-icons a:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.header-2 .mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .header-2 .header-top,
+  .header-2 .header-bottom {
+    padding: 12px 15px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-2 .header-bottom {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .header-2 .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-2 .nav-menu {
+    display: none;
+    width: 100%;
+    background-color: var(--header-footer-color);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-2 .nav-menu.active {
+    display: flex;
+  }
+
+  .header-2 .nav-menu li a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .header-2 .nav-menu li a::after {
+    display: none;
+  }
+
+  .header-2 .social-icons {
+    padding: 15px 20px;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--accent-color);
+  }
+
+  .header-2 .social-icons a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .header-2 .header-top {
+    padding: 10px 15px;
+  }
+}
+</style>
