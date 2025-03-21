@@ -1,14 +1,21 @@
-<!-- Hero Section 2: Split Layout -->
+<!-- Hero Section 2: Split Design -->
 <section class="hero hero-2">
-  <div class="hero-split">
-    <div class="hero-content">
-      <div class="content-wrapper">
-        <h1 class="hero-title">{{ .context.Site.Params.hero.title }}</h1>
-        <p class="hero-description">{{ .context.Site.Params.hero.description }}</p>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        {{ if .context.IsHome }}
+          <h1 class="hero-title">{{ .context.Site.Params.pages.home.hero.title }}</h1>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.home.hero.subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.home.hero.description }}</p>
+        {{ else if eq .context.RelPermalink "/about/" }}
+          <h1 class="hero-title">{{ .context.Site.Params.pages.about.hero.title }}</h1>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.about.hero.subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.about.hero.description }}</p>
+        {{ end }}
       </div>
-    </div>
-    <div class="hero-image">
-      <div class="hero-overlay"></div>
+      <div class="hero-image">
+        <div class="image-overlay"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -19,44 +26,39 @@
   height: 60vh;
   min-height: 400px;
   overflow: hidden;
+  background-color: var(--header-footer-color);
 }
 
-.hero-2 .hero-split {
-  display: flex;
+.hero-2 .container {
+  height: 100%;
+  padding: 0;
+}
+
+.hero-2 .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
 }
 
 .hero-2 .hero-content {
-  flex: 1;
   display: flex;
-  align-items: center;
-  padding: 40px;
-  background-color: var(--header-footer-color);
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
   color: var(--header-footer-text);
-}
-
-.hero-2 .content-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: fadeInLeft 0.8s ease forwards;
-}
-
-.hero-2 .hero-image {
-  flex: 1;
   position: relative;
-  background-color: var(--accent-color);
+  z-index: 2;
 }
 
-.hero-2 .hero-overlay {
+.hero-2 .hero-content::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 100px;
   height: 100%;
-  background-color: var(--header-footer-color);
-  opacity: 0.1;
+  background: linear-gradient(to right, transparent, var(--header-footer-color));
+  z-index: -1;
 }
 
 .hero-2 .hero-title {
@@ -64,18 +66,43 @@
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.2;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.8s ease forwards;
 }
 
 .hero-2 .hero-subtitle {
   font-size: 1.8em;
   margin-bottom: 20px;
   font-weight: 400;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.8s ease forwards 0.2s;
 }
 
 .hero-2 .hero-description {
   font-size: 1.2em;
   margin-bottom: 30px;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.8s ease forwards 0.4s;
+}
+
+.hero-2 .hero-image {
+  position: relative;
+  background-color: var(--accent-color);
+  overflow: hidden;
+}
+
+.hero-2 .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-color) 0%, var(--header-footer-color) 100%);
+  opacity: 0.8;
 }
 
 .hero-2 .hero-cta {
@@ -113,6 +140,10 @@
     min-height: 350px;
   }
 
+  .hero-2 .hero-content {
+    padding: 40px;
+  }
+
   .hero-2 .hero-title {
     font-size: 3em;
   }
@@ -129,13 +160,18 @@
     min-height: 300px;
   }
 
-  .hero-2 .hero-split {
-    flex-direction: column;
+  .hero-2 .hero-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-2 .hero-content {
     padding: 40px 20px;
     order: 2;
+    text-align: center;
+  }
+
+  .hero-2 .hero-content::before {
+    display: none;
   }
 
   .hero-2 .hero-image {

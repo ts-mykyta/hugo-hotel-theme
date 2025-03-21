@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "Hotel Theme"
 
 # Основні параметри сайту
-
 [params]
 description = "A modular Hugo theme example"
 keywords = "Some keywords"
@@ -18,7 +17,7 @@ hover_color = "tomato"
 [params.layouts]
 footer = "footer-1"
 header = "header-3"
-hero = "hero-1"
+hero = "hero-3"
 offers = "offers-2"
 
 # Доступні компоненти
@@ -28,30 +27,28 @@ footers = ["footer-1", "footer-2", "footer-3"]
 heros = ["hero-1", "hero-2", "hero-3"]
 offers = ["offers-1", "offers-2", "offers-3"]
 
-# Налаштування hero секції
-[params.hero]
-title = "Welcome to Our Luxury Hotel"
-subtitle = "Experience Unparalleled Comfort"
-description = "Discover a world of luxury and relaxation at our hotel. We offer exceptional service, stunning views, and unforgettable experiences."
-cta_text = "Book Now"
-cta_url = "/booking"
-background_image = "/images/hero-bg.jpg"
-overlay_opacity = 0.5
+# Керування секціями
+[params.sections]
+hero = true
+offers = true
+
+# Налаштування сторінок
+[params.pages]
+  [params.pages.home]
+    hero = { title = "Welcome to Our Luxury Hotel", subtitle = "Experience Unparalleled Comfort", description = "Discover a world of luxury and relaxation at our hotel. We offer exceptional service, stunning views, and unforgettable experiences."}
+    offers = { title = "What We Offer", subtitle = "Experience Luxury and Comfort" }
+
+  [params.pages.about]
+    hero = { title = "About Our Hotel", subtitle = "Your Luxury Destination", description = "Experience the perfect blend of comfort and elegance" }
+    about = { title = "About Us", subtitle = "Welcome to our hotel - where luxury meets comfort", description = "Discover our story, mission, and commitment to excellence in hospitality" }
 
 # Налаштування секції "What we offer"
 [params.offers]
-title = "What We Offer"
-subtitle = "Experience Luxury and Comfort"
 items = [
   { icon = "fas fa-bed", title = "Luxury Rooms", description = "Experience ultimate comfort in our elegantly appointed rooms with premium amenities and stunning views." },
   { icon = "fas fa-utensils", title = "Fine Dining", description = "Savor exquisite cuisine prepared by world-class chefs in our restaurants and cafes." },
   { icon = "fas fa-spa", title = "Spa & Wellness", description = "Rejuvenate your body and mind with our comprehensive spa treatments and wellness programs." }
 ]
-
-# Керування секціями
-[params.sections]
-hero = true
-offers = true
 
 # Налаштування футера
 [params.footer]
@@ -68,14 +65,16 @@ name_placeholder = "Your Name"
 email_placeholder = "Your Email"
 message_placeholder = "Your Message"
 submit_text = "Send Message"
-form_action = "/contact"
+form_action = "/"
 
+# Налаштування соціальних мереж
 [params.social]
 twitter = "https://twitter.com/"
 facebook = "https://facebook.com/"
 instagram = "https://instagram.com/"
 youtube = "https://youtube.com/"
 
+# Налаштування меню
 [[menu.main]]
 name = "Home"
 url = "/"
@@ -83,10 +82,10 @@ weight = 1
 
 [[menu.main]]
 name = "About"
-url = "/about/"
+url = "/about"
 weight = 2
 
 [[menu.main]]
 name = "Contact"
-url = "/contact/"
+url = "/contact"
 weight = 3

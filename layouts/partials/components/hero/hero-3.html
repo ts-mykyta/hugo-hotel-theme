@@ -1,11 +1,16 @@
-<!-- Hero Section 3: Modern Minimal Design -->
+<!-- Hero Section 3: Gradient Design -->
 <section class="hero hero-3">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">{{ .context.Site.Params.hero.title }}</h1>
-        <p class="hero-description">{{ .context.Site.Params.hero.description }}</p>
-      </div>
+      {{ if .context.IsHome }}
+        <h1 class="hero-title">{{ .context.Site.Params.pages.home.hero.title }}</h1>
+        <h2 class="hero-subtitle">{{ .context.Site.Params.pages.home.hero.subtitle }}</h2>
+        <p class="hero-description">{{ .context.Site.Params.pages.home.hero.description }}</p>
+      {{ else if eq .context.RelPermalink "/about/" }}
+        <h1 class="hero-title">{{ .context.Site.Params.pages.about.hero.title }}</h1>
+        <h2 class="hero-subtitle">{{ .context.Site.Params.pages.about.hero.subtitle }}</h2>
+        <p class="hero-description">{{ .context.Site.Params.pages.about.hero.description }}</p>
+      {{ end }}
     </div>
   </div>
 </section>
@@ -15,65 +20,56 @@
   position: relative;
   height: 60vh;
   min-height: 400px;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, var(--header-footer-color) 0%, var(--accent-color) 100%);
-  color: var(--header-footer-text);
   overflow: hidden;
-}
-
-.hero-3::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
-  z-index: 1;
+  background: linear-gradient(135deg, var(--header-footer-color) 0%, var(--accent-color) 100%);
 }
 
 .hero-3 .container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 60px;
 }
 
 .hero-3 .hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.hero-3 .hero-text {
-  flex: 1;
+  max-width: 600px;
+  text-align: right;
+  color: var(--header-footer-text);
   position: relative;
+  z-index: 2;
 }
 
-.hero-3 .hero-text::after {
+.hero-3 .hero-content::after {
   content: '';
   position: absolute;
   bottom: -20px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--header-footer-text);
-  opacity: 0.8;
+  right: 0;
+  width: 100px;
+  height: 4px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: slideInRight 0.8s ease forwards 0.6s;
 }
 
 .hero-3 .hero-title {
-  font-size: 4em;
+  font-size: 3.5em;
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.2;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  transform: translateX(20px);
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.hero-3 .hero-subtitle {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRight 0.8s ease forwards 0.2s;
 }
 
 .hero-3 .hero-description {
@@ -81,18 +77,27 @@
   margin-bottom: 30px;
   line-height: 1.6;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.4s;
+  transform: translateX(20px);
+  animation: fadeInRight 0.8s ease forwards 0.4s;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -103,8 +108,16 @@
     min-height: 350px;
   }
 
+  .hero-3 .container {
+    padding: 0 40px;
+  }
+
   .hero-3 .hero-title {
-    font-size: 3.5em;
+    font-size: 3em;
+  }
+  
+  .hero-3 .hero-subtitle {
+    font-size: 1.5em;
   }
 }
 
@@ -113,22 +126,29 @@
   .hero-3 {
     height: auto;
     min-height: 300px;
-    padding: 40px 0;
+  }
+
+  .hero-3 .container {
+    padding: 40px 20px;
+    justify-content: center;
   }
 
   .hero-3 .hero-content {
-    flex-direction: column;
     text-align: center;
-    gap: 30px;
+    max-width: 100%;
   }
 
-  .hero-3 .hero-text::after {
+  .hero-3 .hero-content::after {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleX(0);
   }
 
   .hero-3 .hero-title {
     font-size: 2.5em;
+  }
+  
+  .hero-3 .hero-subtitle {
+    font-size: 1.3em;
   }
   
   .hero-3 .hero-description {
@@ -140,11 +160,14 @@
 @media (max-width: 480px) {
   .hero-3 {
     min-height: 250px;
-    padding: 30px 0;
   }
 
   .hero-3 .hero-title {
     font-size: 2em;
+  }
+  
+  .hero-3 .hero-subtitle {
+    font-size: 1.1em;
   }
   
   .hero-3 .hero-description {
