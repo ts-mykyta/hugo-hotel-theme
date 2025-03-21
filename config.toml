@@ -16,21 +16,26 @@ hover_color = "#0056b3"
 
 # Налаштування компонентів
 [params.layouts]
-footer = "footer-2"
-header = "header-2"
+footer = "footer-1"
+header = "header-3"
+hero = "hero-3"
 
 # Доступні компоненти
 [params.layouts.available]
 headers = ["header-1", "header-2", "header-3"]
 footers = ["footer-1", "footer-2", "footer-3"]
+heros = ["hero-1", "hero-2", "hero-3"]
+
+# Налаштування hero секції
+[params.hero]
+title = "Welcome to Our Luxury Hotel"
+description = "Discover a world of luxury and relaxation at our hotel. We offer exceptional service, stunning views, and unforgettable experiences."
+background_image = "/images/hero-bg.jpg"
+overlay_opacity = 0.5
 
 # Керування секціями
 [params.sections]
-fantasyApp = true
-reviews = true
-phoneInputTop = false
-phoneInputBottom = true
-disclaimer = true
+hero = true
 
 # Налаштування футера
 [params.footer]
