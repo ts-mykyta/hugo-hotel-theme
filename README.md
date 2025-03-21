@@ -2,7 +2,7 @@
 Чтобы создать динамичные страницы отелей, сначала заполняется конфигурация, потом запускается пайтон:
 
 ```
-python scripts/generate-category-pages.py
+python scripts/generate_category_pages.py
 ```
 
 ## Для чего нужен?
