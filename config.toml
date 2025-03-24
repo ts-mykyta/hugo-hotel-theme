@@ -23,6 +23,7 @@ mission = "mission-3"
 choose = "choose-3"
 team = "team-3"
 commitment = "commitment-3"
+hotel = "hotel-3"
 
 # Доступні компоненти
 [params.layouts.available]
@@ -34,6 +35,7 @@ missions = ["mission-1", "mission-2", "mission-3"]
 choose = ["choose-1", "choose-2", "choose-3"]
 teams = ["team-1", "team-2", "team-3"]
 commitments = ["commitment-1", "commitment-2", "commitment-3"]
+hotels = ["hotel-1", "hotel-2", "hotel-3"]
 
 # Керування секціями
 [params.sections]
@@ -159,41 +161,83 @@ weight = 6
   title = "Urban Canvas"
   type = "art-hotels"
   image = "/images/art.jpg"
-  description = "Graffiti-inspired downtown hotel."
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
 
   [[params.hotels.list]]
   title = "Relax SPA"
   type = "spa-hotels"
   image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+
   [[params.hotels.list]]
   title = "Relax SPA"
   type = "spa-hotels"
   image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+
   [[params.hotels.list]]
   title = "Relax SPA"
   type = "spa-hotels"
   image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
-  [[params.hotels.list]]
-  title = "Relax SPA"
-  type = "spa-hotels"
-  image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
-  [[params.hotels.list]]
-  title = "Relax SPA"
-  type = "spa-hotels"
-  image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
-  [[params.hotels.list]]
-  title = "Relax SPA"
-  type = "spa-hotels"
-  image = "/images/spa.jpg"
-  description = "Total wellness and luxury."
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
 
   [[params.hotels.list]]
   title = "Forest Breeze"
   type = "eco-hotels"
   image = "/images/eco.jpg"
-  description = "Eco-friendly cabins in the woods."
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."

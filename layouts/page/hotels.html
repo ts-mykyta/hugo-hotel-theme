@@ -1,4 +1,9 @@
 {{ define "main" }}
-  {{ $type := .File.TranslationBaseName }}
-  {{ partial "components/hotels/hotel-1.html" (dict "context" . "type" $type) }}
+  {{ $pageType := .File.TranslationBaseName }}
+  {{ partial "component-loader.html" (dict
+  "context" .
+  "type" "hotels"
+  "name" (.Site.Params.layouts.hotel | default "hotel-1")
+  "category" $pageType
+  ) }}
 {{ end }}
