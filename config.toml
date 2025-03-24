@@ -2,6 +2,8 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Hotel Theme"
 
+[taxonomies]
+
 # Основні параметри сайту
 [params]
 description = "A modular Hugo theme example"
@@ -113,14 +115,19 @@ url = "/eco-hotels/"
 weight = 4
 
 [[menu.main]]
+name = "Casino Hotels"
+url = "/casino-hotels/"
+weight = 5
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 5
+weight = 6
 
 [[menu.main]]
 name = "Contact"
 url = "/contact"
-weight = 6
+weight = 7
 
 # Додавання нових параметрів
 [params.mission]
@@ -232,6 +239,25 @@ weight = 6
 
   [[params.hotels.list.description]]
   subtitle = "Welcome to Relax SPA"
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
+
+  [[params.hotels.list.description]]
+  subtitle = "Why Choose Us?"
+  text = "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+
+  [[params.hotels.list.description]]
+  subtitle = "Modern Comfort"
+  text = "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+
+
+
+  [[params.hotels.list]]
+  title = "Casino Resort"
+  type = "casino-hotels"
+  image = "/images/spa.jpg"
+
+  [[params.hotels.list.description]]
+  subtitle = "Welcome to Casino Resort"
   text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s."
 
   [[params.hotels.list.description]]
