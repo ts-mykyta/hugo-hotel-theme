@@ -3,33 +3,29 @@
 {{ $hotels := slice }}
 
 {{ range $ctx.Site.Params.hotels.list }}
-  {{ if eq (lower .type) $type }}
-    {{ $hotels = $hotels | append . }}
-  {{ end }}
+{{ if eq (lower .type) $type }}
+{{ $hotels = $hotels | append . }}
+{{ end }}
 {{ end }}
 
-<section class="hotel-section hotel-section-1">
+<section class="hotel-section hotel-section-2">
   <div class="container">
     <h1 style="color: var(--main-color);">{{ $ctx.Title }}</h1>
 
     {{ if eq (len $hotels) 0 }}
     <p>No hotels found in this category.</p>
     {{ else }}
-    <div class="hotel-grid">
+    <div class="hotel-list">
       {{ range $hotels }}
-      <div class="hotel-card">
+      <div class="hotel-horizontal-card">
         <img src="{{ .image }}" alt="{{ .title }}">
-        <div class="hotel-content">
+        <div class="hotel-horizontal-content">
           <h2 class="hotel-title">{{ .title }}</h2>
-          {{ if .description }}
-            {{ range .description }}
-              {{ if .subtitle }}
-                <h3 class="hotel-subtitle">{{ .subtitle }}</h3>
-              {{ end }}
-              {{ if .text }}
-                <p class="hotel-description">{{ .text }}</p>
-              {{ end }}
-            {{ end }}
+          {{ with .description }}
+          {{ range . }}
+          {{ if .subtitle }}<h3 class="hotel-subtitle">{{ .subtitle }}</h3>{{ end }}
+          {{ if .text }}<p class="hotel-description">{{ .text }}</p>{{ end }}
+          {{ end }}
           {{ end }}
           <a href="/contact" class="hotel-button">Book now</a>
         </div>
@@ -41,73 +37,70 @@
 </section>
 
 <style>
-  .hotel-section-1 {
+  .hotel-section-2 {
     background-color: var(--header-footer-color);
-    padding: 50px 0;
+    padding: 60px 0;
   }
 
-  .hotel-section-1 h1 {
-    margin: 0;
-  }
-
-  .hotel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .hotel-list {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
   }
 
-  .hotel-card {
+  .hotel-horizontal-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
     background-color: var(--header-footer-color);
     border: 1px solid var(--main-color);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .hotel-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  .hotel-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .hotel-content {
     padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .hotel-horizontal-card img {
+    width: 100%;
+    max-width: 280px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .hotel-horizontal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     color: var(--text-color);
   }
 
   .hotel-title {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: var(--main-color);
     margin-bottom: 0.5rem;
   }
 
   .hotel-subtitle {
-    font-size: 1.1rem;
     font-weight: 600;
     color: var(--accent-color);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0 0.2rem;
   }
 
   .hotel-description {
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .hotel-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
+    margin-top: auto;
+    align-self: flex-start;
     background-color: var(--accent-color);
     color: var(--header-footer-text);
     text-decoration: none;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: 500;
     transition: background-color 0.3s ease;
@@ -115,5 +108,17 @@
 
   .hotel-button:hover {
     background-color: var(--text-color);
+  }
+
+
+  @media (max-width: 728px) {
+    .hotel-horizontal-card {
+      flex-direction: column;
+    }
+
+    .hotel-horizontal-card img {
+      max-width: 100%;
+    }
+    
   }
 </style>

@@ -1,0 +1,150 @@
+{{ $ctx := .context }}
+{{ $type := lower .category }}
+{{ $hotels := slice }}
+
+{{ range $ctx.Site.Params.hotels.list }}
+{{ if eq (lower .type) $type }}
+{{ $hotels = $hotels | append . }}
+{{ end }}
+{{ end }}
+
+<section class="hotel-section hotel-section-3">
+  <div class="container">
+    <h1 class="section-title">{{ $ctx.Title }}</h1>
+
+    {{ if eq (len $hotels) 0 }}
+    <p>No hotels found in this category.</p>
+    {{ else }}
+    <div class="hotel-gallery">
+      {{ range $hotels }}
+      <div class="hotel-card-overlay">
+        <div class="hotel-image-wrapper">
+          <img src="{{ .image }}" alt="{{ .title }}">
+          <div class="hotel-overlay">
+            <h2 class="hotel-title">{{ .title }}</h2>
+            {{ with .description }}
+            {{ range . }}
+            {{ if .subtitle }}<h3 class="hotel-subtitle">{{ .subtitle }}</h3>{{ end }}
+            {{ if .text }}<p class="hotel-description">{{ .text }}</p>{{ end }}
+            {{ end }}
+            {{ end }}
+            <a href="/contact" class="hotel-button">Book now</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+  .hotel-section-3 {
+    background-color: var(--header-footer-color);
+    padding: 60px 0;
+  }
+
+  .section-title {
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .hotel-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .hotel-card-overlay {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .hotel-image-wrapper {
+    position: relative;
+    height: 400px;
+  }
+
+  .hotel-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+.hotel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  color: var(--header-footer-text);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hotel-image-wrapper:hover .hotel-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hotel-overlay {
+    opacity: 1;
+  }
+}
+
+
+  .hotel-overlay::-webkit-scrollbar {
+    width: 6px;
+  }
+  .hotel-overlay::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+
+  .hotel-image-wrapper:hover .hotel-overlay {
+    opacity: 1;
+  }
+
+  .hotel-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0.3rem 0;
+  }
+
+  .hotel-description {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hotel-button {
+    align-self: flex-start;
+    background-color: var(--accent-color);
+    color: var(--header-footer-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .hotel-button:hover {
+    background-color: var(--hover-color);
+  }
+</style>
