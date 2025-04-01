@@ -4,17 +4,17 @@
     <div class="hero-grid">
       <div class="hero-content">
         {{ if .context.IsHome }}
-          <h1 class="hero-title">{{ .context.Site.Params.pages.home.hero.title }}</h1>
-          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.home.hero.subtitle }}</h2>
-          <p class="hero-description">{{ .context.Site.Params.pages.home.hero.description }}</p>
+          <h2 class="hero-title">{{ .context.Site.Params.pages.home.hero.hero_title }}</h2>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.home.hero.hero_subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.home.hero.hero_description }}</p>
         {{ else if eq .context.RelPermalink "/about/" }}
-          <h1 class="hero-title">{{ .context.Site.Params.pages.about.hero.title }}</h1>
-          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.about.hero.subtitle }}</h2>
-          <p class="hero-description">{{ .context.Site.Params.pages.about.hero.description }}</p>
+          <h2 class="hero-title">{{ .context.Site.Params.pages.about.hero.hero_title }}</h2>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.about.hero.hero_subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.about.hero.hero_description }}</p>
         {{ else if eq .context.RelPermalink "/contact/" }}
-          <h1 class="hero-title">{{ .context.Site.Params.pages.contact.hero.title }}</h1>
-          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.contact.hero.subtitle }}</h2>
-          <p class="hero-description">{{ .context.Site.Params.pages.contact.hero.description }}</p>
+          <h2 class="hero-title">{{ .context.Site.Params.pages.contact.hero.hero_title }}</h2>
+          <h2 class="hero-subtitle">{{ .context.Site.Params.pages.contact.hero.hero_subtitle }}</h2>
+          <p class="hero-description">{{ .context.Site.Params.pages.contact.hero.hero_description }}</p>
         {{ end }}
       </div>
       <div class="hero-image">

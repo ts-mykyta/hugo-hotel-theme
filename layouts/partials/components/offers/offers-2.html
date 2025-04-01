@@ -2,8 +2,8 @@
 <section class="offers offers-2">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">{{ .context.Site.Params.offers.title }}</h2>
-      <p class="section-subtitle">{{ .context.Site.Params.offers.subtitle }}</p>
+      <h2 class="section-title">{{ .context.Site.Params.pages.home.offers.offers_title }}</h2>
+      <p class="section-subtitle">{{ .context.Site.Params.pages.home.offers.offers_subtitle }}</p>
     </div>
     <div class="offers-grid">
       {{ range .context.Site.Params.offers.items }}
@@ -43,6 +43,7 @@
   font-size: 2.5em;
   margin-bottom: 20px;
   font-weight: 700;
+  color: var(--accent-color);
 }
 
 .offers-2 .section-subtitle {

@@ -1,5 +1,5 @@
 ---
-title: "Spa Hotels"
+title: "Example Hotels"
 layout: "hotels"
 type: "page"
 ---
